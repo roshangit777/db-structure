@@ -1,7 +1,5 @@
 # DB Structure (Users, Roles, Menus, Mappings)
 
-## This document contains the database structure for:
-
 1. Users table
 2. Roles table
 3. Menus table
