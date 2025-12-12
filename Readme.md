@@ -10,50 +10,50 @@
 
 ## 1. users Table
 
-| Column        | Type                    |
-| ------------- | ----------------------- |
-| user_id       | SERIAL PRIMARY KEY      |
-| name          | VARCHAR(100)            |
-| email         | VARCHAR(150) UNIQUE     |
-| password_hash | VARCHAR(255)            |
-| is_active     | BOOLEAN DEFAULT true    |
-| created_at    | TIMESTAMP DEFAULT NOW() |
-| updated_at    | TIMESTAMP DEFAULT NOW() |
+| Column        | Type                 |
+| ------------- | -------------------- |
+| user_id       | Int PRIMARY KEY      |
+| name          | String               |
+| email         | String UNIQUE        |
+| password_hash | String               |
+| is_active     | Boolean DEFAULT true |
+| created_at    | String DEFAULT NOW() |
+| updated_at    | String DEFAULT NOW() |
 
 ## 2. roles Table
 
-| Column      | Type                |
-| ----------- | ------------------- |
-| role_id     | SERIAL PRIMARY KEY  |
-| role_name   | VARCHAR(100) UNIQUE |
-| description | VARCHAR(255)        |
+| Column      | Type            |
+| ----------- | --------------- |
+| role_id     | Int PRIMARY KEY |
+| role_name   | String UNIQUE   |
+| description | String          |
 
 ## 3. menus Table
 
 | Column    | Type                     |
 | --------- | ------------------------ |
-| menu_id   | SERIAL PRIMARY KEY       |
-| menu_name | VARCHAR(100)             |
-| menu_path | VARCHAR(255)             |
-| parent_id | INT (FK → menus.menu_id) |
-| order_no  | INT DEFAULT 0            |
-| desc      | VARCHAR(255)             |
+| menu_id   | Int PRIMARY KEY          |
+| menu_name | String                   |
+| menu_path | String                   |
+| parent_id | Int (FK → menus.menu_id) |
+| order_no  | Int DEFAULT 0            |
+| desc      | String                   |
 
 ## 4. role_menu_mapping Table
 
 | Column  | Type                   |
 | ------- | ---------------------- |
-| id      | SERIAL PRIMARY KEY     |
-| role_id | INT FK → roles.role_id |
-| menu_id | INT FK → menus.menu_id |
+| id      | Int PRIMARY KEY        |
+| role_id | Int FK → roles.role_id |
+| menu_id | Int FK → menus.menu_id |
 
 ## 5. user_role_mapping Table
 
 | Column  | Type                   |
 | ------- | ---------------------- |
-| id      | SERIAL PRIMARY KEY     |
-| user_id | INT FK → users.user_id |
-| role_id | INT FK → roles.role_id |
+| id      | Int PRIMARY KEY        |
+| user_id | Int FK → users.user_id |
+| role_id | Int FK → roles.role_id |
 
 ## Image
 
